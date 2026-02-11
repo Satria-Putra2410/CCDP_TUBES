@@ -1,0 +1,21 @@
+classDiagram
+    direction LR
+    class Reservasi
+    class Reservasi.Builder {
+      +id(String) Builder
+      +namaMahasiswa(String) Builder
+      +ruangan(Ruangan) Builder
+      +durasiJam(int) Builder
+      +fasilitas(KomponenFasilitas) Builder
+      +strategiHarga(StrategiHarga) Builder
+      +catatan(String) Builder
+      +bangun() Reservasi
+    }
+    class Ruangan
+    class KomponenFasilitas
+    class StrategiHarga
+
+    Reservasi ..> Reservasi.Builder : builds
+    Reservasi.Builder --> Ruangan
+    Reservasi.Builder --> KomponenFasilitas
+    Reservasi.Builder --> StrategiHarga

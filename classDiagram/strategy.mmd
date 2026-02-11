@@ -1,0 +1,15 @@
+classDiagram
+    direction LR
+    class StrategiHarga {
+      <<interface>>
+      +hitung(Reservasi) double
+    }
+    class StrategiHargaPerJam
+    class StrategiHargaPaket
+    class StrategiHargaEvent
+    class Reservasi
+
+    StrategiHarga <|.. StrategiHargaPerJam
+    StrategiHarga <|.. StrategiHargaPaket
+    StrategiHarga <|.. StrategiHargaEvent
+    Reservasi --> StrategiHarga : uses

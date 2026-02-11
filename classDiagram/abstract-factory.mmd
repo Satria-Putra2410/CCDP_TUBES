@@ -1,0 +1,24 @@
+classDiagram
+    direction LR
+    class PabrikRuangan {
+      <<interface>>
+      +buatRuangan() Ruangan
+      +buatFasilitasBawaan() KomponenFasilitas
+    }
+    class PabrikRuangDiskusi
+    class PabrikRuangPresentasi
+    class PabrikRuangMultimedia
+    class Ruangan
+    class KomponenFasilitas
+
+    PabrikRuangan <|.. PabrikRuangDiskusi
+    PabrikRuangan <|.. PabrikRuangPresentasi
+    PabrikRuangan <|.. PabrikRuangMultimedia
+
+    PabrikRuangDiskusi --> Ruangan
+    PabrikRuangPresentasi --> Ruangan
+    PabrikRuangMultimedia --> Ruangan
+
+    PabrikRuangDiskusi --> KomponenFasilitas
+    PabrikRuangPresentasi --> KomponenFasilitas
+    PabrikRuangMultimedia --> KomponenFasilitas

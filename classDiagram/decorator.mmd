@@ -1,0 +1,10 @@
+classDiagram
+    direction LR
+    class Ruangan {
+      <<interface>>
+    }
+    class DekoratorRuangan
+    class KomponenFasilitas
+    Ruangan <|.. DekoratorRuangan
+    DekoratorRuangan --> Ruangan : wraps
+    DekoratorRuangan --> KomponenFasilitas : adds

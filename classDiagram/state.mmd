@@ -1,0 +1,22 @@
+classDiagram
+    direction LR
+    class StatusReservasi {
+      <<interface>>
+      +setujui(Reservasi)
+      +mulai(Reservasi)
+      +selesai(Reservasi)
+      +batalkan(Reservasi)
+    }
+    class StatusDiminta
+    class StatusDisetujui
+    class StatusDipakai
+    class StatusSelesai
+    class StatusDibatalkan
+    class Reservasi
+
+    StatusReservasi <|.. StatusDiminta
+    StatusReservasi <|.. StatusDisetujui
+    StatusReservasi <|.. StatusDipakai
+    StatusReservasi <|.. StatusSelesai
+    StatusReservasi <|.. StatusDibatalkan
+    Reservasi --> StatusReservasi : state

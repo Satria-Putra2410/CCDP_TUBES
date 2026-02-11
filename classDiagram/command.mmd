@@ -1,0 +1,17 @@
+classDiagram
+    direction LR
+    class Perintah {
+      <<interface>>
+      +eksekusi()
+      +batal()
+    }
+    class PerintahReservasi
+    class PerintahBatal
+    class LayananReservasi
+    class Reservasi
+
+    Perintah <|.. PerintahReservasi
+    Perintah <|.. PerintahBatal
+    PerintahReservasi --> LayananReservasi
+    PerintahReservasi --> Reservasi
+    PerintahBatal --> LayananReservasi

@@ -1,0 +1,21 @@
+classDiagram
+    direction LR
+    class Ruangan {
+      <<interface>>
+      +getKebijakan() KebijakanPenggunaan
+    }
+    class RuanganDasar
+    class KebijakanPenggunaan {
+      <<interface>>
+      +getAturan() String
+      +bolehReservasi(int) boolean
+    }
+    class KebijakanRuangDiskusi
+    class KebijakanRuangPresentasi
+    class KebijakanRuangMultimedia
+
+    Ruangan <|.. RuanganDasar
+    KebijakanPenggunaan <|.. KebijakanRuangDiskusi
+    KebijakanPenggunaan <|.. KebijakanRuangPresentasi
+    KebijakanPenggunaan <|.. KebijakanRuangMultimedia
+    RuanganDasar --> KebijakanPenggunaan : uses
